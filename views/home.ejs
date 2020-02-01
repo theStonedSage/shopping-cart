@@ -1,0 +1,23 @@
+<%- include("partials/header") -%>  
+
+<%  for(var i=0;i<productlist.length;i+=3){ %> 
+        <div class="row mt-sm-5"> 
+       <%  for(var j=i;j<i+3&&j<productlist.length;j++){ %> 
+        <div class="col">
+                <div class="card" style="width: 18rem;">
+                        <img src=<%= productlist[j].image %>  class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= productlist[j].name %></h5>
+                          <p class="card-text description"><%= productlist[j].description %>.</p>
+                          <a href="/buy-item/<%= productlist[j]._id %>" class="btn btn-success ">Buy Game</a>
+                        </div>
+                </div>
+        </div>
+       <% } %> 
+        </div> 
+<% } %> 
+
+
+ 
+
+<%- include("partials/footer") -%> 
